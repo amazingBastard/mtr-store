@@ -68,7 +68,7 @@ app/                # Application folder
         views/              # All views (routes) styles
       elements.less       # html elements and modules styles
       helpers.less        # style helpers for global use
-      typography.less     # global typigraphy styles
+      typography.less     # global typography styles
       variables.less      # All LESS variables
   collections/        # All Collections
   lib/                # Lib files that get executed first
