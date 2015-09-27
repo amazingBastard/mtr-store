@@ -5,33 +5,43 @@
 // buttons
 
 .button {
+  position: relative;
   cursor: pointer;
-  background-color: @gray-light;
+  margin: 0;
+  padding: @space-base;
+  outline: 0;
+  border: @space-micro solid @gray-light;
+  background-color: @background-color;
   color: @font-color;
+  font-weight: bold;
 
   &:hover,
   &:focus {
-    background-color: @primary-color;
+    background-color: @gray-light;
     color: @light;
   }
 
   &.primary {
+    border-color: @primary-color;
     background-color: @primary-color;
     color: @light;
 
     &:hover,
     &:focus {
+      border-color: @secondary-color;
       background-color: @secondary-color;
       color: @light;
     }
   }
 
   &.secondary {
+    border-color: @secondary-color;
     background-color: @secondary-color;
     color: @light;
 
     &:hover,
     &:focus {
+      border-color: @primary-color;
       background-color: @primary-color;
       color: @light;
     }
@@ -42,10 +52,6 @@
     width: auto;
     margin-right: auto;
     margin-left: auto;
-  }
-
-  &.rounded {
-    border-radius: @space-tiny;
   }
 }
 
