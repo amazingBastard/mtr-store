@@ -1,44 +1,7 @@
 <template name="products">
     <div class="products module">
-        <div class="product">
-            <h2 class="title">Product title</h2>
-            <img class="image thumb" src="http://placehold.it/200x200" />
-            <p class="description">Product description</p>
-        </div>
-        <div class="product">
-            <h2 class="title">Product title</h2>
-            <img class="image thumb" src="http://placehold.it/200x200" />
-            <p class="description">Product description</p>
-        </div>
-        <div class="product">
-            <h2 class="title">Product title</h2>
-            <img class="image thumb" src="http://placehold.it/200x200" />
-            <p class="description">Product description</p>
-        </div>
-        <div class="product">
-            <h2 class="title">Product title</h2>
-            <img class="image thumb" src="http://placehold.it/200x200" />
-            <p class="description">Product description</p>
-        </div>
-        <div class="product">
-            <h2 class="title">Product title</h2>
-            <img class="image thumb" src="http://placehold.it/200x200" />
-            <p class="description">Product description</p>
-        </div>
-        <div class="product">
-            <h2 class="title">Product title</h2>
-            <img class="image thumb" src="http://placehold.it/200x200" />
-            <p class="description">Product description</p>
-        </div>
-        <div class="product">
-            <h2 class="title">Product title</h2>
-            <img class="image thumb" src="http://placehold.it/200x200" />
-            <p class="description">Product description</p>
-        </div>
-        <div class="product">
-            <h2 class="title">Product title</h2>
-            <img class="image thumb" src="http://placehold.it/200x200" />
-            <p class="description">Product description</p>
-        </div>
+        {{#each products}}
+            {{> product}}
+        {{/each}}
     </div>
 </template>
