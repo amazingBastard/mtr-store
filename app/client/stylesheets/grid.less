@@ -1,0 +1,258 @@
+@import 'variables';
+
+// grid styles - based on https://github.com/philipwalton/solved-by-flexbox
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &.top {
+    align-items: flex-start;
+  }
+
+  &.bottom {
+    align-items: flex-end;
+  }
+
+  &.center {
+    align-items: center;
+  }
+
+  &.justify {
+    justify-content: center;
+  }
+
+  .cell {
+    flex: 1;
+
+    &.top {
+      align-self: flex-start;
+    }
+
+    &.bottom {
+      align-self: flex-end;
+    }
+
+    &.center {
+      align-self: center;
+    }
+
+    &.auto {
+      flex: none;
+    }
+
+    &.full {
+      width: @full !important;
+      flex: none !important;
+    }
+
+    &.half {
+      width: @half !important;
+      flex: none !important;
+    }
+
+    &.third {
+      width: @third !important;
+      flex: none !important;
+    }
+
+    &.quarter {
+      width: @quarter !important;
+      flex: none !important;
+    }
+  }
+
+  &.gutter {
+    margin-left: -@space-base;
+
+    .cell {
+      padding-left: @space-base;
+    }
+  }
+
+  &.flex {
+
+    .cell {
+      display: flex;
+    }
+  }
+
+  &.fit {
+
+    .cell {
+      flex: 1;
+    }
+  }
+
+  &.full {
+
+    .cell {
+      flex: 0 0 @full;
+    }
+  }
+
+  &.half {
+
+    .cell {
+      flex: 0 0 @half;
+    }
+  }
+
+  &.third {
+
+    .cell {
+      flex: 0 0 @third;
+    }
+  }
+
+  &.quarter {
+
+    .cell {
+      flex: 0 0 @quarter;
+    }
+  }
+
+  &.desktop {
+
+    &.full {
+
+      .cell {
+        flex: 1;
+
+        @media (min-width: @desktop-width) {
+          flex: 0 0 @full;
+        }
+      }
+    }
+
+    &.half {
+
+      .cell {
+        flex: 1;
+
+        @media (min-width: @desktop-width) {
+          flex: 0 0 @half;
+        }
+      }
+    }
+
+    &.third {
+
+      .cell {
+        flex: 1;
+
+        @media (min-width: @desktop-width) {
+          flex: 0 0 @third;
+        }
+      }
+    }
+
+    &.quarter {
+
+      .cell {
+        flex: 1;
+
+        @media (min-width: @desktop-width) {
+          flex: 0 0 @quarter;
+        }
+      }
+    }
+  }
+
+  &.tablet {
+
+    &.full {
+
+      .cell {
+        flex: 1;
+
+        @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+          flex: 0 0 @full;
+        }
+      }
+    }
+
+    &.half {
+
+      .cell {
+        flex: 1;
+
+        @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+          flex: 0 0 @half;
+        }
+      }
+    }
+
+    &.third {
+
+      .cell {
+        flex: 1;
+
+        @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+          flex: 0 0 @third;
+        }
+      }
+    }
+
+    &.quarter {
+
+      .cell {
+        flex: 1;
+
+        @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+          flex: 0 0 @quarter;
+        }
+      }
+    }
+  }
+
+  &.mobile {
+
+    &.full {
+
+      .cell {
+        flex: 1;
+
+        @media (max-width: @tablet-width) {
+          flex: 0 0 @full;
+        }
+      }
+    }
+
+    &.half {
+
+      .cell {
+        flex: 1;
+
+        @media (max-width: @tablet-width) {
+          flex: 0 0 @half;
+        }
+      }
+    }
+
+    &.third {
+
+      .cell {
+        flex: 1;
+
+        @media (max-width: @tablet-width) {
+          flex: 0 0 @third;
+        }
+      }
+    }
+
+    &.quarter {
+
+      .cell {
+        flex: 1;
+
+        @media (max-width: @tablet-width) {
+          flex: 0 0 @quarter;
+        }
+      }
+    }
+  }
+}
