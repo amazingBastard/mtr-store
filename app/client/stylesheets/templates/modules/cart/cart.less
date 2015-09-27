@@ -8,6 +8,15 @@
     margin: 0;
     padding: 0;
     float: right;
+    
+    .button {
+      background-color: fade(@light, @three-quarters);
+      
+      &:hover {
+        background-color: @primary-color;
+        color: @gray-light;
+      }
+    }
   }
 
   .meta {
