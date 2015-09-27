@@ -1,0 +1,27 @@
+@import '../../../variables';
+
+// products styles
+
+.products.module {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  .product {
+    flex: 0 0 @full;
+
+    @media (min-width: @phone-width) {
+      flex: 0 0 @half;
+    }
+
+    @media (min-width: @tablet-width) {
+      flex: 0 0 @third;
+    }
+
+    @media (min-width: @laptop-width) {
+      flex: 0 0 @quarter;
+    }
+  }
+}
