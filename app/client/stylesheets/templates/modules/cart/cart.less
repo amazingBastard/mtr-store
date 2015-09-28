@@ -33,7 +33,7 @@
       z-index: 10;
 
       &:hover,
-      &:focus{
+      &:focus {
         border-color: @secondary-color;
         background-color: @secondary-color;
         color: @primary-color;
@@ -137,11 +137,9 @@
         border-top: @space-micro solid @primary-color;
         color: @light;
 
-        .total {
-
-          &.final {
-            color: @primary-color;
-          }
+        .total.final {
+          margin: 0;
+          color: @primary-color;
         }
       }
     }
@@ -219,7 +217,7 @@
     }
 
     .meta {
-      
+
       &.count {
         display: none;
       }
