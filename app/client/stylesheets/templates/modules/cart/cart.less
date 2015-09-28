@@ -3,19 +3,28 @@
 // cart styles
 
 .cart.module {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: @space-mini;
+  z-index: 10;
 
-  &.action {
-    margin: 0;
-    padding: 0;
-    float: right;
-    
-    .button {
-      background-color: fade(@light, @three-quarters);
-      
-      &:hover {
-        background-color: @primary-color;
-        color: @gray-light;
-      }
+  .toggle.cart.button {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: @full;
+    height: @full;
+    cursor: pointer;
+    background-color: fade(@light, @three-quarters);
+    z-index: 10;
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    backface-visibility: hidden;
+
+    &:hover {
+      background-color: @secondary-color;
     }
   }
 
