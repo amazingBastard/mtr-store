@@ -8,6 +8,8 @@ Template.toggleCart.events({
 Template.insertCartItem.events({
     'click .insert.item.button': function(event) {
         event.preventDefault();
+
+        Session.set('itemCount', Items.find().count());
         console.log('insert item to cart items collection');
     }
 });
@@ -15,6 +17,8 @@ Template.insertCartItem.events({
 Template.removeCartItem.events({
     'click .remove.item.button': function(event) {
         event.preventDefault();
+
+        _deps.changed();
         console.log('remove item from cart collection');
     }
 })

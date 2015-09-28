@@ -18,13 +18,13 @@ Template.cart.helpers({
 });
 
 Tracker.autorun(function () {
-    var total = 0,
-        items = Items.find({}, {fields: {price: 1}});
-
-    items.forEach(function(item){
-        total += item.price;
-    });
-
-    Session.set('itemTotal', Math.floor(total*100)/100);
-    Session.set('itemCount', items.count());
+    //var total = 0,
+    //    items = Items.find({}, {fields: {price: 1}});
+    //
+    //items.forEach(function(item){
+    //    total += item.price;
+    //});
+    //
+    //Session.set('itemTotal', Math.floor(total*100)/100);
+    //Session.set('itemCount', items.count());
 });

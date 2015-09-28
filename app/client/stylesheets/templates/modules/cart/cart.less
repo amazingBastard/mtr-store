@@ -85,6 +85,23 @@
 
       .cart.item {
         position: relative;
+        color: @light;
+
+        .meta.price {
+          float: right;
+          margin-right: @space-large;
+        }
+
+        .remove.item.button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 0;
+          border: 0;
+          background-color: transparent;
+          color: @negative-color;
+          font-size: @font-size-base;
+        }
       }
     }
   }
