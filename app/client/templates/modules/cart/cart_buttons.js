@@ -2,6 +2,7 @@ Template.toggleCart.events({
     'click .toggle.cart.button': function (event) {
         event.preventDefault();
         Session.set('activeCart', !Session.get('activeCart'));
+        $('body').toggleClass('hiddenflow');
     }
 });
 

@@ -17,20 +17,38 @@
     padding: 0;
   }
 
-  .toggle.cart.button {
+  .cart.button {
     display: block;
     position: relative;
-    overflow: hidden;
     cursor: pointer;
-    transition: all @faster;
+    overflow: hidden;
     backface-visibility: hidden;
-    background-color: fade(@light, @three-quarters);
-    font-size: @space-base;
-    z-index: 10;
+    transition: all @faster cubic-bezier(0.2, 1, 0.3, 1);;
 
-    &:hover,
-    &:focus{
-      background-color: @secondary-color;
+    &.toggle {
+      float: right;
+      background-color: fade(@light, @three-quarters);
+      z-index: 10;
+
+      &:hover,
+      &:focus{
+        background-color: @secondary-color;
+      }
+    }
+
+    &.checkout {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      color: @secondary-color;
+      
+      &:hover,
+      &:focus {
+        border-color: @primary-color;
+        background-color: @secondary-color;
+        color: @primary-color;
+      }
     }
   }
 
@@ -42,7 +60,7 @@
     width: @full;
     height: @full;
     margin: 0;
-    padding: @space-base;
+    padding: 0;
     pointer-events: none;
 
     &:before {
@@ -58,9 +76,10 @@
     }
 
     .title {
+      margin: 0;
+      padding: @space-tiny;
       opacity: 0;
-      color: @light;
-      text-transform: uppercase;
+      color: @primary-color;
       text-align: center;
       transform: translate3d(0, @full, 0);
 
@@ -77,8 +96,10 @@
 
     .cart.items {
       position: relative;
+      overflow-y: auto;
+      height: @fluid-three-quarters;
       margin: 0;
-      padding: 0;
+      padding: @space-base;
       opacity: 0;
       list-style-type: none;
       transform: translate3d(0, @full, 0);
@@ -87,12 +108,16 @@
         position: relative;
         color: @light;
 
+        &:last-child {
+          margin: 0;
+        }
+
         .meta.price {
           float: right;
           margin-right: @space-large;
         }
 
-        .remove.item.button {
+        .remove.item {
           position: absolute;
           right: 0;
           top: 0;
@@ -122,18 +147,27 @@
   }
 
   &.active {
-    padding: @space-mini;
+    padding: @space-base;
 
-    .toggle.cart.button {
-      border-color: @negative-color;
-      background-color: @secondary-color;
-      color: @negative-color;
+    .cart.button {
 
-      &:hover,
-      &:focus {
+      &.toggle {
         border-color: @negative-color;
-        background-color: @negative-color;
-        color: @secondary-color;
+        background-color: @secondary-color;
+        color: @negative-color;
+
+        &:hover,
+        &:focus {
+          border-color: @negative-color;
+          background-color: @negative-color;
+          color: @secondary-color;
+        }
+      }
+
+      &.checkout {
+        bottom: @space-base;
+        left: @space-base;
+        opacity: 1;
       }
     }
 
@@ -160,7 +194,7 @@
         opacity: 1;
         transform: translate3d(0, 0, 0);
         transition: all @fast;
-        transition-delay: @fast;
+        transition-delay: @faster;
       }
     }
 

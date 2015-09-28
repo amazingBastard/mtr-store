@@ -3,16 +3,16 @@
         {{> toggleCart}}
         <div class="cart modal">
             {{#if Template.subscriptionsReady}}
-                <h1 class="title">Your Items</h1>
+                <h1 class="title">Your Cart</h1>
                 <ul class="cart items">
                     {{#each items}}
                         {{> cartItem}}
                     {{/each}}
                 </ul>
+                {{> checkoutCartItems}}
             {{else}}
                 <h1 class="negative title">No items in cart</h1>
             {{/if}}
-
         </div>
     </div>
 </template>

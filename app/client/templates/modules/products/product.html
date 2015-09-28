@@ -1,9 +1,8 @@
 <template name="product">
     <div class="product" id="{{_id}}">
-        <h2 class="title">{{title}}</h2>
+        <h2 class="title">{{title}} <small class="price meta">{{currency price}}</small></h2>
         <img class="fluid image" src="{{image}}" />
         <p class="description">{{description}}</p>
-        <span class="price meta">{{currency price}}</span>
         {{> insertCartItem}}
     </div>
 </template>
