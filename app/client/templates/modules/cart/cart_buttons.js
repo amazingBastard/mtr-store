@@ -1,6 +1,9 @@
 Template.toggleCart.helpers({
     toggleIcon: function () {
         return Session.get('activeCart') ? 'fa fa-times' : 'fa fa-shopping-cart'
+    },
+    itemCount:function(){
+        return Session.get('itemCount');
     }
 });
 
