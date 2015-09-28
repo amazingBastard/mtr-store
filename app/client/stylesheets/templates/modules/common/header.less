@@ -6,12 +6,36 @@
   height: @fluid-full;
   padding: @space-mini;
   background: @background-gradient !important;
+  
+  @media (min-width: @tablet-width) {
+    height: @fluid-half;
+  }
 
   .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
     display: inline-block;
-    margin: 0;
-    padding: @space-mini;
+    margin: @space-micro;
+    padding: @space-mini @space-tiny - @space-quantum;
     border: @space-atomic solid;
+    background-color: fade(@background-color, @three-quarters);
     font-weight: normal;
+    text-decoration: none;
+    transition: all @faster;
+
+    &:hover,
+    &:focus {
+      margin: 0;
+      border-color: @secondary-color;
+      background-color: @secondary-color;
+      color: @light;
+
+      .bold {
+        color: @primary-color;
+        transition: color @faster;
+      }
+    }
   }
 }
