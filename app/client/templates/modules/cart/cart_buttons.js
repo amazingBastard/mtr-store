@@ -26,9 +26,17 @@ Template.insertCartItem.events({
 });
 
 Template.removeCartItem.events({
-    'click .remove.item.button': function (event) {
+    'click .remove.item.button': function (event, template) {
         event.preventDefault();
 
-        console.log('remove item from cart collection');
+        Meteor.call('removeItem', this._id);
     }
-})
+});
+
+Template.removeCartItems.events({
+    'click .remove.items.button': function (event, template) {
+        event.preventDefault();
+
+        Meteor.call('removeItems');
+    }
+});
