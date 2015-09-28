@@ -9,9 +9,9 @@ Template.insertCartItem.events({
     'click .insert.item.button': function (event) {
         event.preventDefault();
 
-        var title = $(event.target).find('[name=title]').val(),
-            type = $(event.target).find('[name=image]').val(),
-            price = $(event.target).find('[name=description]').val(),
+        var title = 'Title',
+            type = 'Type',
+            price = 1.50,
             qty = 1;
 
         Meteor.call('insertItem', title, type, price, qty, function (error) {
@@ -28,7 +28,6 @@ Template.removeCartItem.events({
     'click .remove.item.button': function (event) {
         event.preventDefault();
 
-        _deps.changed();
         console.log('remove item from cart collection');
     }
 })

@@ -1,8 +1,8 @@
 <template name="cartItem">
-    <li class="cart item">
+    <li class="cart item" id="{{_id}}">
         <span class="meta quantity">{{quantity}}</span>
         {{title}}
-        <span class="meta price">${{price}}</span>
+        <span class="meta price">{{currency price}}</span>
         {{> removeCartItem}}
     </li>
 </template>
