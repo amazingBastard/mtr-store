@@ -1,5 +1,8 @@
 <template name="cart">
-    <div class="cart module">
+    <div class="cart module {{toggleClass}}">
         {{> toggleCart}}
+        <div class="cart items">
+            {{> cartItem}}
+        </div>
     </div>
 </template>

@@ -15,17 +15,30 @@
     display: block;
     position: relative;
     overflow: hidden;
-    width: @full;
-    height: @full;
     cursor: pointer;
+    transition: transform @fast cubic-bezier(0.2, 1, 0.3, 1);
+    backface-visibility: hidden;
     background-color: fade(@light, @three-quarters);
     z-index: 10;
-    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
-    backface-visibility: hidden;
 
-    &:hover {
+    &:hover,
+    &:focus{
       background-color: @secondary-color;
     }
+  }
+
+  .cart.items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    width: @full;
+    height: @full;
+    padding: @space-base;
+    background-color: @secondary-color;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
   }
 
   .meta {
@@ -39,6 +52,19 @@
       top: 0;
       left: 0.25em;
       font-weight: normal;
+    }
+  }
+
+  &.active {
+
+    .toggle.cart.button {
+
+    }
+
+    .cart.items {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity @fast cubic-bezier(0.2, 1, 0.3, 1);
     }
   }
 }
