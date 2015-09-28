@@ -36,11 +36,11 @@
 
   .cart.modal {
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    right: 0;
     overflow: hidden;
-    width: @full;
-    height: @full;
+    width: @space-jumbo;
+    height: @space-jumbo;
     margin: 0;
     padding: @space-base;
     pointer-events: none;
@@ -121,6 +121,8 @@
     }
 
     .cart.modal {
+      width: @full;
+      height: @full;
       pointer-events: auto;
 
       &:before {
