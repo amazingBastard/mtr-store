@@ -3,17 +3,13 @@
         <div class="cart module {{toggleClass}}">
             {{> toggleCart}}
             <div class="cart modal">
+                <h1 class="title">{{itemCount}} items in your Cart</h1>
                 {{#if hasItems}}
-                    <h1 class="title">{{itemCount}} items in your Cart</h1>
-                    <ul class="cart items">
-                        {{#each items}}
-                            {{> cartItem}}
-                        {{/each}}
-                    </ul>
+                    {{> cartItems}}
                     {{> cartTotals}}
                     {{> checkoutCartItems}}
                 {{else}}
-                    <h1 class="negative title">{{itemCount}} items in your cart!</h1>
+                    <h2 class="negative title">You should buy some stuff!</h2>
                 {{/if}}
             </div>
         </div>

@@ -1,10 +1,14 @@
 <template name="cartTotals">
-    <div class="cart totals">
-        <p class="sub total">
+    <div class="cart toolbar">
+        <h4 class="sub total">
             Sub Total:
-            <span class="meta sub total">{{currency itemSubTotal}}</span>
-        </p>
-
+            <span class="meta price">
+                {{currency itemSubTotal}}
+            </span>
+            {{> removeCartItems}}
+        </h4>
+    </div>
+    <div class="cart totals">
         <p class="tax total">
             Tax (8%):
             <span class="meta tax">{{currency itemTax}}</span>

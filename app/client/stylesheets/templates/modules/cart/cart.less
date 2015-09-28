@@ -116,13 +116,13 @@
 
           .meta.price {
             float: right;
-            margin-right: @space-large;
+            margin-right: @space-base + @space-tiny;
           }
 
           .remove.item {
             position: absolute;
             right: 0;
-            top: 0;
+            top: @space-atomic;
             padding: 0;
             border: 0;
             background-color: transparent;
@@ -132,9 +132,49 @@
         }
       }
 
-      &.totals {
+      &.toolbar {
+        position: relative;
+        overflow: hidden;
+        height: auto;
         margin-top: @space-base;
-        border-top: @space-micro solid @primary-color;
+        padding: @space-tiny @space-base;
+        background-color: @primary-color;
+        transform: translate3d(0, @half, 0);
+
+        .sub.total {
+          margin: 0;
+          padding: 0;
+          text-align: left;
+
+          .meta {
+
+            &.price {
+              margin-right: @space-base + @space-tiny;
+            }
+          }
+
+          .remove.items.button {
+            position: absolute;
+            top: -0.25em;
+            right: -0.5em;
+            height: auto;
+            padding: 0.25em 0.35em;
+            border-color: @secondary-color;
+            background-color: @secondary-color;
+            color: @negative-color;
+            font-size: 0.75em;
+
+            &:hover,
+            &:focus {
+              border-color: @negative-color;
+              background-color: @negative-color;
+              color: @secondary-color;
+            }
+          }
+        }
+      }
+
+      &.totals {
         color: @light;
 
         .total.final {
@@ -154,6 +194,12 @@
       left: @space-mini;
       font-size: @three-quarters;
       font-weight: normal;
+    }
+
+    &.quantity {
+      margin-right: @space-mini;
+      float: left;
+      font-size: @half;
     }
   }
 
@@ -208,6 +254,10 @@
 
         .items {
           transition-delay: @faster;
+        }
+
+        .toolbar {
+          transition-delay: @slow;
         }
 
         .totals {
