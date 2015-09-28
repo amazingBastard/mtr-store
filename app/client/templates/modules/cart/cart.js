@@ -1,10 +1,10 @@
-Template.onRendered(function () {
-    Session.set('activeCart', false);
-    Session.setDefault('itemCount', 0);
+Template.cart.onCreated(function() {
+    this.autorun(() => {
+        this.subscribe('items');
+    });
 });
 
-Template.cart.helpers({
-    toggleClass: function () {
-        return Session.get('activeCart') ? 'active' : '';
-    }
+Template.cart.onRendered(function () {
+    Session.set('activeCart', false);
+    Session.setDefault('itemCount', 0);
 });
