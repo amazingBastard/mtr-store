@@ -60,6 +60,7 @@ http://localhost:3000
 ```
 app/                # Application folder
   client/             # Client folder
+    lib/                # Lib files that get executed first on client
     stylesheets         # LESS files (with autoprefixer)
       templates/         # All template styles
         layouts/            # All layouts styles
@@ -109,6 +110,10 @@ environments/       # Environments folder
   * [fastclick](http://github.com/meteor/meteor/tree/devel/packages/fastclick)
 * Collections
   * [dburles:collection-helpers](https://github.com/dburles/meteor-collection-helpers)
+* Routing
+  * [kadira:flow-router](https://github.com/kadirahq/flow-router)
+  * [kadira:blaze-layout](https://github.com/kadirahq/blaze-layout)
+  * [meteorhacks:fast-render](https://github.com/meteorhacks/fast-render)
 * UI and UX
   * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css)
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)

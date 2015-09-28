@@ -1,5 +1,9 @@
 // cart module helpers
 
+Template.registerHelper('hasItems', function() {
+    return !Session.equals('itemCount', 0);
+});
+
 Template.registerHelper('itemCount', function() {
     return Session.get('itemCount');
 });

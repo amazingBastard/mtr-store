@@ -1,6 +1,7 @@
 Template.products.onCreated(function() {
-    this.autorun(() => {
-       this.subscribe('products');
+    var self = this;
+    self.autorun(function() {
+        self.subscribe('products');
     });
 });
 

@@ -2,7 +2,7 @@
     <div class="cart module {{toggleClass}}">
         {{> toggleCart}}
         <div class="cart modal">
-            {{#if hasItems}}
+            {{#if Template.subscriptionsReady}}
                 <h1 class="title">Your Items</h1>
                 <ul class="cart items">
                     {{#each items}}

@@ -1,7 +1,11 @@
 <template name="products">
-    <div class="products module">
-        {{#each products}}
-            {{> product}}
-        {{/each}}
-    </div>
+    {{#if Template.subscriptionsReady}}
+        <div class="products module">
+            {{#each products}}
+                {{> product}}
+            {{/each}}
+        </div>
+    {{else}}
+        {{> loading}}
+    {{/if}}
 </template>

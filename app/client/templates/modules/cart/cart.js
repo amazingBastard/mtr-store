@@ -1,6 +1,7 @@
 Template.cart.onCreated(function () {
-    this.autorun(() => {
-        this.subscribe('items');
+    var self = this;
+    self.autorun(function() {
+        self.subscribe('items');
     });
 });
 
@@ -10,10 +11,15 @@ Template.cart.onRendered(function () {
     Session.setDefault('itemTotal', 0);
 });
 
+Template.cart.helpers({
+    items: function () {
+        return Items.find({}, {sort: {created: -1}});
+    }
+});
+
 Tracker.autorun(function () {
-    var query = {},
-        total = 0,
-        items = Items.find(query, {fields: {price: 1}});
+    var total = 0,
+        items = Items.find({}, {fields: {price: 1}});
 
     items.forEach(function(item){
         total += item.price;

@@ -1,0 +1,22 @@
+@import '../../../variables';
+
+// loading styles
+
+.loading.module {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: @full;
+  height: @full;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+  background-color: @light;
+
+  .loader.image {
+    margin: 0;
+    width: @space-god;
+  }
+}
