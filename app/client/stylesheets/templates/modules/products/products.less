@@ -10,7 +10,9 @@
   padding: 0;
 
   .product {
+    position: relative;
     flex: 0 0 @full;
+    margin: @space-giant auto;
     padding: @space-base;
 
     @media (min-width: @phone-width) {
@@ -23,6 +25,31 @@
 
     @media (min-width: @desktop-width) {
       flex: 0 0 @quarter;
+    }
+
+    .title {
+      border-bottom: @space-atomic solid;
+    }
+
+    .description {
+      margin-bottom: @space-giant;
+    }
+
+    .meta {
+      position: absolute;
+      bottom: -(@space-base + @space-tiny);
+      right: 0;
+      padding: @space-mini;
+      background-color: @header-color;
+      color: @primary-color;
+      font-size: @three-quarters;
+    }
+
+    .button {
+      position: absolute;
+      bottom: @space-base;
+      left: @half;
+      transform: translate(-@half, 0);
     }
   }
 }

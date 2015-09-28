@@ -1,18 +1,22 @@
 <template name="cart">
-    <div class="cart module {{toggleClass}}">
-        {{> toggleCart}}
-        <div class="cart modal">
-            {{#if Template.subscriptionsReady}}
-                <h1 class="title">Your Cart</h1>
-                <ul class="cart items">
-                    {{#each items}}
-                        {{> cartItem}}
-                    {{/each}}
-                </ul>
-                {{> checkoutCartItems}}
-            {{else}}
-                <h1 class="negative title">No items in cart</h1>
-            {{/if}}
+    {{#if Template.subscriptionsReady}}
+        <div class="cart module {{toggleClass}}">
+            {{> toggleCart}}
+            <div class="cart modal">
+                {{#if hasItems}}
+                    <h1 class="title">{{itemCount}} items in your Cart</h1>
+                    <ul class="cart items">
+                        {{#each items}}
+                            {{> cartItem}}
+                        {{/each}}
+                    </ul>
+                    {{> checkoutCartItems}}
+                {{else}}
+                    <h1 class="negative title">{{itemCount}} items in your cart!</h1>
+                {{/if}}
+            </div>
         </div>
-    </div>
+    {{else}}
+        {{> loading}}
+    {{/if}}
 </template>
