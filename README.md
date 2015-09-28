@@ -2,7 +2,7 @@
 
 Mobile-first Store with Cart and Checkout built with Meteor
 
-[VIEW LIVE DEMO](http://sugarsweet.meteor.com)
+[VIEW LIVE DEMO](http://sugarsweets.meteor.com)
 
 * [Roadmap](#roadmap)
 * [How to use](#how-to-use)
