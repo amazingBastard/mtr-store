@@ -40,7 +40,7 @@
       }
     }
 
-    &.checkout {
+    &.checkout.primary {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -75,9 +75,10 @@
       margin: 0;
       padding: @space-tiny;
       opacity: 0;
-      color: @primary-color;
+      background-color: @primary-color;
+      color: @light;
       text-align: center;
-      transform: translate3d(0, @full, 0);
+      transform: translate3d(0, -@half, 0);
 
       &.negative {
         display: flex;
@@ -90,48 +91,64 @@
       }
     }
 
-    .cart.items {
+    .cart {
       position: relative;
-      overflow-y: auto;
-      height: @fluid-three-quarters;
       margin: 0;
       padding: @space-base;
       opacity: 0;
-      list-style-type: none;
-      transform: translate3d(0, @full, 0);
+      transform: translate3d(0, @half, 0);
 
-      .cart.item {
-        position: relative;
+      &.items {
+        overflow-y: auto;
+        height: @fluid-half;
+        list-style-type: none;
+        transform: translate3d(0, 0, 0);
+
+        .cart.item {
+          position: relative;
+          margin-bottom: @space-base;
+          padding: 0;
+          color: @light;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          .meta.price {
+            float: right;
+            margin-right: @space-large;
+          }
+
+          .remove.item {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+            border: 0;
+            background-color: transparent;
+            color: @negative-color;
+            font-size: @font-size-base;
+          }
+        }
+      }
+
+      &.totals {
+        margin-top: @space-base;
+        border-top: @space-micro solid @primary-color;
         color: @light;
 
-        &:last-child {
-          margin: 0;
-        }
+        .total {
 
-        .meta.price {
-          float: right;
-          margin-right: @space-large;
-        }
-
-        .remove.item {
-          position: absolute;
-          right: 0;
-          top: 0;
-          padding: 0;
-          border: 0;
-          background-color: transparent;
-          color: @negative-color;
-          font-size: @font-size-base;
+          &.final {
+            color: @primary-color;
+          }
         }
       }
     }
   }
 
   .meta {
-
-    &.price {
-
-    }
+    float: right;
 
     &.count {
       position: absolute;
@@ -186,11 +203,18 @@
         }
       }
 
-      .cart.items {
+      .cart {
         opacity: 1;
         transform: translate3d(0, 0, 0);
         transition: all @fast;
-        transition-delay: @faster;
+
+        .items {
+          transition-delay: @faster;
+        }
+
+        .totals {
+          transition-delay: @slow;
+        }
       }
     }
 

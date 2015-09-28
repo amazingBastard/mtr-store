@@ -14,6 +14,14 @@ Template.registerHelper('itemCount', function() {
     return Session.get('itemCount');
 });
 
+Template.registerHelper('itemSubTotal', function() {
+    return Session.get('itemSubTotal');
+});
+
+Template.registerHelper('itemTax', function() {
+   return Session.get('itemTax');
+});
+
 Template.registerHelper('itemTotal', function() {
     return Session.get('itemTotal');
 });

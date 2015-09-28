@@ -1,0 +1,18 @@
+<template name="cartTotals">
+    <div class="cart totals">
+        <p class="sub total">
+            Sub Total:
+            <span class="meta sub total">{{currency itemSubTotal}}</span>
+        </p>
+
+        <p class="tax total">
+            Tax 8%:
+            <span class="meta tax">{{currency itemTax}}</span>
+        </p>
+
+        <h2 class="final total">
+            Total:
+            <span class="meta total">{{currency itemTotal}}</span>
+        </h2>
+    </div>
+</template>
