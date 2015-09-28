@@ -1,3 +1,9 @@
+// template helpers
+
+Template.registerHelper('currency', function(num){
+    return '$' + Number(num).toFixed(2);
+});
+
 // cart module helpers
 
 Template.registerHelper('hasItems', function() {

@@ -1,14 +1,14 @@
 Meteor.methods({
-    insertItem: function (title, type, price, quantity) {
+    insertItem: function (title, type, price, qty) {
         Items.insert({
             title: title,
             type: type,
             price: price,
-            quantity: quantity
+            qty: qty
         });
     },
     updateItem: function (itemId, quantity) {
-        Items.update(itemId, {$set: {quantity: quantity}});
+        Items.update(itemId, {$set: {qty: qty}});
     },
     removeItem: function (itemId) {
         Items.remove(itemId);
