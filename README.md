@@ -2,7 +2,7 @@
 
 Mobile-first Store with Cart and Checkout built with Meteor
 
-[DEMO](http://store.meteor.com)
+[VIEW LIVE DEMO](http://sugarsweet.meteor.com)
 
 * [Roadmap](#roadmap)
 * [How to use](#how-to-use)
@@ -29,10 +29,9 @@ Make sure [Meteor is installed and up to date](https://www.meteor.com/install) o
 curl https://install.meteor.com/ | sh
 ```
 
-### Installation
+### Run Locally
 
 ```
-git clone git@github.com:amazingBastard/mtr-store.git
 cd mtr-store
 ```
 
@@ -48,10 +47,11 @@ Now you can start the app with the following command:
 ./run.sh
 ```
 
-### Deployments
+The app should now be running on:
 
-It is highly recommended to use [Meteor Up](https://github.com/arunoda/meteor-up) for easy deployments.
-Have a look at the repository for more information.
+```
+http://localhost:3000
+```
 
 ## Structure
 
