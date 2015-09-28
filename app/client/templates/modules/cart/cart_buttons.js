@@ -3,3 +3,9 @@ Template.toggleCart.events({
        Session.set('activeCart', !Session.get('activeCart'));
    }
 });
+
+Template.insertCartItem.events({
+    'click .insert.item.button': function() {
+        console.log('insert item to cart items collection');
+    }
+});

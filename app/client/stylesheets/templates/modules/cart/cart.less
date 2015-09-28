@@ -16,7 +16,7 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: transform @fast cubic-bezier(0.2, 1, 0.3, 1);
+    transition: all @faster;
     backface-visibility: hidden;
     background-color: fade(@light, @three-quarters);
     z-index: 10;
@@ -27,18 +27,41 @@
     }
   }
 
-  .cart.items {
+  .cart.modal {
     position: fixed;
     top: 0;
     left: 0;
-    overflow: auto;
+    overflow: hidden;
     width: @full;
     height: @full;
+    margin: 0;
     padding: @space-base;
-    background-color: @secondary-color;
     pointer-events: none;
-    opacity: 0;
     visibility: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: @full;
+      height: @full;
+      background: @secondary-color;
+      transform: translate3d(@full, @full, 0) translate3d(-@space-jumbo, @space-jumbo, 0);
+      transition: transform @fast cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .cart.items {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      list-style-type: none;
+
+      .cart.item {
+        position: relative;
+      }
+    }
   }
 
   .meta {
@@ -58,13 +81,35 @@
   &.active {
 
     .toggle.cart.button {
+      background-color: transparent;
+      color: @light;
 
+      &:hover,
+      &:focus {
+        color: @negative-color;
+      }
     }
 
-    .cart.items {
-      opacity: 1;
+    .cart.modal {
       visibility: visible;
-      transition: opacity @fast cubic-bezier(0.2, 1, 0.3, 1);
+      pointer-events: auto;
+
+      &:before {
+        transform: translate3d(0, 0, 0);
+        transition-delay: 0s;
+      }
+
+      .cart.items {
+        opacity: 1;
+        transition: opacity @fast cubic-bezier(0.2, 1, 0.3, 1);
+      }
+    }
+
+    .meta {
+      
+      &.count {
+        display: none;
+      }
     }
   }
 }

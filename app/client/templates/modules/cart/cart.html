@@ -1,8 +1,11 @@
 <template name="cart">
     <div class="cart module {{toggleClass}}">
         {{> toggleCart}}
-        <div class="cart items">
-            {{> cartItem}}
+        <div class="cart modal">
+            <h1 class="title">Your Items</h1>
+            <ul class="cart items">
+                {{> cartItem}}
+            </ul>
         </div>
     </div>
 </template>
