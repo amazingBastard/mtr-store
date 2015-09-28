@@ -4,6 +4,10 @@ Template.registerHelper('itemCount', function() {
     return Session.get('itemCount');
 });
 
+Template.registerHelper('itemTotal', function() {
+    return Session.get('itemTotal');
+});
+
 Template.registerHelper('toggleClass', function() {
     return Session.get('activeCart') ? 'active' : '';
 });
