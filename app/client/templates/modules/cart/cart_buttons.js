@@ -1,3 +1,9 @@
+Template.toggleCart.helpers({
+    toggleIcon: function () {
+        return Session.get('activeCart') ? 'fa fa-times' : 'fa fa-shopping-cart'
+    }
+});
+
 Template.toggleCart.events({
    'click .toggle.cart.button': function() {
        Session.set('activeCart', !Session.get('activeCart'));
