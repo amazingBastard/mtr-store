@@ -2,10 +2,17 @@
     <div class="cart module {{toggleClass}}">
         {{> toggleCart}}
         <div class="cart modal">
-            <h1 class="title">Your Items</h1>
-            <ul class="cart items">
-                {{> cartItem}}
-            </ul>
+            {{#if hasItems}}
+                <h1 class="title">Your Items</h1>
+                <ul class="cart items">
+                    {{#each items}}
+                        {{> cartItem}}
+                    {{/each}}
+                </ul>
+            {{else}}
+                <h1 class="negative title">No items in cart</h1>
+            {{/if}}
+
         </div>
     </div>
 </template>

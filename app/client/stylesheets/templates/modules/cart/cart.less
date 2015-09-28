@@ -63,6 +63,16 @@
       text-transform: uppercase;
       text-align: center;
       transform: translate3d(0, @full, 0);
+
+      &.negative {
+        display: flex;
+        min-height: @full;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        color: @negative-color;
+        text-align: center;
+      }
     }
 
     .cart.items {
@@ -123,6 +133,10 @@
         transform: translate3d(0, 0, 0);
         transition: all @fast;
         transition-delay: @faster;
+
+        &.negative {
+          transition-delay: 0ms;
+        }
       }
 
       .cart.items {
