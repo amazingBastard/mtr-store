@@ -11,7 +11,7 @@ Template.product.events({
             if (error) {
                 console.error('Insert item method failed: ' + error);
             } else {
-                Session.set('itemCount', Items.find().count());
+                Session.set('itemsCount', Items.find().count());
             }
         });
     }
