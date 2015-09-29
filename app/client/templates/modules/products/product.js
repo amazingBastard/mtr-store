@@ -6,7 +6,6 @@ Template.product.events({
             product = this._id;
 
 
-
         Meteor.call('insertItem', qty, product, function (error) {
             if (error) {
                 console.error('Insert item method failed: ' + error);
