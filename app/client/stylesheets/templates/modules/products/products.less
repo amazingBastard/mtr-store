@@ -50,11 +50,26 @@
       font-size: @three-quarters;
     }
 
-    .button {
+    .actions {
       position: absolute;
-      bottom: @space-base;
-      left: @half;
-      transform: translate(-@half, 0);
+      bottom: 0;
+      display: flex;
+      margin: auto;
+      width: @three-quarters;
+      
+      .qty.input {
+        flex: 0 0 @quarter;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        text-align: center;
+        border: (@space-mini - @space-quantum) solid @secondary-color;
+      }
+
+      .button {
+        flex: 0 0 @three-quarters;
+      }
     }
   }
 }
