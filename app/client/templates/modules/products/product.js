@@ -1,4 +1,3 @@
-
 Template.product.events({
     'click .insert.item.button': function (event, template) {
         event.preventDefault();
