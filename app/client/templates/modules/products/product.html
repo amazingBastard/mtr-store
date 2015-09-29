@@ -3,6 +3,9 @@
         <h2 class="title">{{title}} <small class="price meta">{{currency price}}</small></h2>
         <img class="fluid image" src="{{image}}" />
         <p class="description">{{description}}</p>
-        {{> insertCartItem}}
+        <div class="actions">
+            {{> itemQtyInput}}
+            {{> insertCartItem}}
+        </div>
     </div>
 </template>
