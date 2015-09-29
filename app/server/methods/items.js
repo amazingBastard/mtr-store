@@ -1,13 +1,13 @@
 Meteor.methods({
-    insertItem: function (qty, title, type, price, sessionId) {
+    insertItem: function (qty, product, sessionId) {
         if (qty > 0) {
             Items.insert({
                 qty: qty,
-                title: title,
-                type: type,
-                price: price,
+                product: product,
                 sessionId: sessionId
             });
+        } else {
+            console.error('Item must have quantity');
         }
     },
     removeItem: function (itemId) {
