@@ -3,10 +3,11 @@ Template.product.events({
         event.preventDefault();
 
         var qty = template.find('.qty.input').value,
-            product = this._id,
-            sessionId = Meteor.default_connection._lastSessionId;
+            product = this._id;
 
-        Meteor.call('insertItem', qty, product, sessionId, function (error) {
+
+
+        Meteor.call('insertItem', qty, product, function (error) {
             if (error) {
                 console.error('Insert item method failed: ' + error);
             } else {
