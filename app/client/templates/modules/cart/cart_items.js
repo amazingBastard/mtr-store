@@ -1,12 +1,3 @@
-Template.cartItems.onCreated(function () {
-    //Tracker.autorun(function () {
-    //    Session.setDefault('activeCart', false);
-    //    Session.setDefault('itemTax', .08);
-    //    Session.setDefault('itemCount', 0);
-    //    Session.setDefault('itemSubTotal', 0);
-    //});
-});
-
 Template.cartItems.helpers({
     items: function () {
         var cart = [],
@@ -28,15 +19,17 @@ Template.cartItems.helpers({
             cart.push(cartItem);
         });
 
-        cart.count = count;
-        cart.subTotal = total;
-        cart.tax = cart.subTotal * salesTax;
-        cart.total = cart.subTotal + cart.tax;
+        Tracker.autorun(function() {
+            cart.count = count;
+            cart.subTotal = total;
+            cart.tax = cart.subTotal * salesTax;
+            cart.total = cart.subTotal + cart.tax;
 
-        Session.set('itemCount', cart.count);
-        Session.set('itemSubTotal', cart.subTotal);
-        Session.set('itemTax', cart.tax);
-        Session.set('itemTotal', cart.total);
+            Session.set('itemsCount', cart.count);
+            Session.set('itemsSubTotal', cart.subTotal);
+            Session.set('itemsTax', cart.tax);
+            Session.set('itemsTotal', cart.total);
+        });
 
         return cart;
     }

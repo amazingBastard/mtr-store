@@ -4,26 +4,24 @@ Template.registerHelper('currency', function(num){
     return '$' + Number(num).toFixed(2);
 });
 
-// cart module helpers
-
 Template.registerHelper('hasItems', function() {
-    return !Session.equals('itemCount', 0);
+    return !Session.equals('itemsCount', 0);
 });
 
-Template.registerHelper('itemCount', function() {
-    return Session.get('itemCount');
+Template.registerHelper('itemsCount', function() {
+    return Session.get('itemsCount');
 });
 
-Template.registerHelper('itemSubTotal', function() {
-    return Session.get('itemSubTotal');
+Template.registerHelper('itemsSubTotal', function() {
+    return Session.get('itemsSubTotal');
 });
 
-Template.registerHelper('itemTax', function() {
-   return Session.get('itemTax');
+Template.registerHelper('itemsTax', function() {
+   return Session.get('itemsTax');
 });
 
-Template.registerHelper('itemTotal', function() {
-    return Session.get('itemTotal');
+Template.registerHelper('itemsTotal', function() {
+    return Session.get('itemsTotal');
 });
 
 Template.registerHelper('toggleClass', function() {
