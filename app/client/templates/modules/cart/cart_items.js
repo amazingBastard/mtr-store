@@ -23,23 +23,20 @@ Template.cartItems.helpers({
             cartItem.price = (Number(product.price) * cartItem.qty)
 
             total += cartItem.price;
-            count += cartItem.qty;
+            count += +cartItem.qty;
 
             cart.push(cartItem);
         });
 
-        // TODO: return qty as number
         cart.count = count;
         cart.subTotal = total;
         cart.tax = cart.subTotal * salesTax;
         cart.total = cart.subTotal + cart.tax;
 
-        Tracker.autorun(function () {
-            Session.set('itemCount', cart.count);
-            Session.set('itemSubTotal', cart.subTotal);
-            Session.set('itemTax', cart.tax);
-            Session.set('itemTotal', cart.total);
-        });
+        Session.set('itemCount', cart.count);
+        Session.set('itemSubTotal', cart.subTotal);
+        Session.set('itemTax', cart.tax);
+        Session.set('itemTotal', cart.total);
 
         return cart;
     }
