@@ -6,6 +6,7 @@ Template.product.events({
             qty = template.find('.qty.input').value,
             cartItems = Items.find({}, {sort: {created: -1}}),
             cartItemId = '',
+            cartItemQty = '',
             itemExists = false;
 
         if (qty === '') {
@@ -14,24 +15,26 @@ Template.product.events({
 
         cartItems.forEach(function (cartItem) {
             if (cartItem.product === productId) {
-                console.log(cartItem.product);
-                console.log(cartItem._id);
                 cartItemId = cartItem._id;
+                cartItemQty = cartItem.qty;
                 itemExists = true;
                 return false;
             } else {
-                console.log(cartItem.product);
-                console.log(cartItem._id);
                 itemExists = false;
-                return itemExists;
+                return false;
             }
         });
 
         if (itemExists) {
-            console.log('use updateItem method to update qty');
-            console.log(cartItemId);
+            var qtyNew = template.find('.qty.input').value;
 
-            Meteor.call('updateItem', cartItemId, qty, function (error) {
+            if (qtyNew === '') {
+                qtyNew = '1';
+            }
+
+            var qtySum = Number(cartItemQty) + Number(qtyNew);
+
+            Meteor.call('updateItem', cartItemId, qtySum.toString(), function (error) {
                 if (error) {
                     console.error('Update item method failed: ' + error.reason);
                 } else {
