@@ -17,37 +17,6 @@
     padding: 0;
   }
 
-  .cart.button {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    backface-visibility: hidden;
-    transition: all @faster cubic-bezier(0.2, 1, 0.3, 1);
-
-    &.toggle {
-      float: right;
-      border-color: @secondary-color;
-      background-color: fade(@primary-color, @three-quarters);
-      color: @secondary-color;
-      z-index: 10;
-
-      &:hover,
-      &:focus {
-        border-color: @secondary-color;
-        background-color: @secondary-color;
-        color: @primary-color;
-      }
-    }
-
-    &.checkout.primary {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      opacity: 0;
-    }
-  }
-
   .cart.modal {
     position: fixed;
     bottom: 0;
@@ -78,9 +47,8 @@
       left: 0;
       width: @full;
       height: @full;
-      background: @secondary-color;
       transform: translate3d(@full, @full, 0) translate3d(-@space-base, @space-base, 0);
-      transition: transform @fast cubic-bezier(0.2, 1, 0.3, 1);
+      transition: all @fast cubic-bezier(0.2, 1, 0.3, 1);
     }
 
     .title {
@@ -107,126 +75,17 @@
         text-align: center;
       }
     }
-
-    .cart {
-      position: relative;
-      margin: 0;
-      padding: @space-base;
-      opacity: 0;
-      transform: translate3d(0, @half, 0);
-
-      &.items {
-        overflow-y: auto;
-        height: @fluid-half - 5vh;
-        list-style-type: none;
-        transform: translate3d(0, 0, 0);
-
-        .cart.item {
-          position: relative;
-          margin-bottom: @space-base;
-          padding: 0;
-          color: @light;
-
-          &:last-child {
-            margin: 0;
-          }
-
-          .meta.price {
-            float: right;
-            margin-right: @space-base + @space-tiny;
-          }
-
-          .remove.item {
-            position: absolute;
-            right: 0;
-            top: @space-atomic;
-            padding: 0;
-            border: 0;
-            background-color: transparent;
-            color: @negative-color;
-            font-size: @font-size-base;
-          }
-        }
-      }
-
-      &.toolbar {
-        position: relative;
-        overflow: hidden;
-        height: auto;
-        margin-top: @space-base;
-        padding: @space-tiny @space-base;
-        background-color: @primary-color;
-        transform: translate3d(0, @half, 0);
-
-        .sub.total {
-          margin: 0;
-          padding: 0;
-          text-align: left;
-
-          .meta {
-
-            &.price {
-              margin-right: @space-base + @space-tiny;
-            }
-          }
-
-          .remove.items.button {
-            position: absolute;
-            top: -0.25em;
-            right: -0.5em;
-            height: auto;
-            padding: 0.25em 0.35em;
-            border-color: @secondary-color;
-            background-color: @secondary-color;
-            color: @negative-color;
-            font-size: 0.75em;
-
-            &:hover,
-            &:focus {
-              border-color: @negative-color;
-              background-color: @negative-color;
-              color: @secondary-color;
-            }
-          }
-        }
-      }
-
-      &.totals {
-        color: @light;
-
-        .total.final {
-          margin: 0;
-          color: @primary-color;
-        }
-      }
-    }
-  }
-
-  .meta {
-    float: right;
-
-    &.count {
-      position: absolute;
-      top: 0;
-      left: @space-mini;
-      font-size: @three-quarters;
-      font-weight: normal;
-    }
-
-    &.qty {
-      float: left;
-      margin-right: @space-tiny;
-      color: @primary-color;
-    }
   }
 
   &.active {
     padding: @space-base;
 
     .cart.modal {
+      transition: all @faster;
       pointer-events: auto;
 
       &:before {
+        background: @secondary-color;
         transform: translate3d(0, 0, 0);
         transition-delay: 0s;
       }
@@ -240,54 +99,6 @@
         &.negative {
           transition-delay: 0ms;
         }
-      }
-
-      .cart {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-        transition: all @fast;
-
-        .items {
-          transition-delay: @faster;
-        }
-
-        .toolbar {
-          transition-delay: @slow;
-        }
-
-        .totals {
-          transition-delay: @slow;
-        }
-      }
-    }
-
-    .cart.button {
-      transition: all @faster !important;
-
-      &.toggle {
-        border-color: @negative-color;
-        background-color: @secondary-color;
-        color: @negative-color;
-
-        &:hover,
-        &:focus {
-          border-color: @negative-color;
-          background-color: @negative-color;
-          color: @secondary-color;
-        }
-      }
-
-      &.checkout {
-        bottom: @space-base;
-        left: @space-base;
-        opacity: 1;
-      }
-    }
-
-    .meta {
-
-      &.count {
-        display: none;
       }
     }
   }

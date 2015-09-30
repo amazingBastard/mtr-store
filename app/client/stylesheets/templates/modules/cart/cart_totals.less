@@ -1,0 +1,54 @@
+@import '../../../variables';
+
+// cart totals styles
+
+.cart.module {
+
+  .cart.modal {
+
+    .cart.toolbar {
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      height: auto;
+      margin: @space-base 0 0;
+      padding: @space-tiny @space-base;
+      background-color: @primary-color;
+      transform: translate3d(0, @half, 0);
+
+      .sub.total {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+      }
+    }
+
+    .cart.totals {
+      position: relative;
+      opacity: 0;
+      margin: 0;
+      padding: @space-base;
+      color: @light;
+      transform: translate3d(0, @half, 0);
+
+      .total.final {
+        margin: 0;
+        color: @primary-color;
+      }
+    }
+  }
+
+  &.active {
+
+    .cart.modal {
+
+      .cart.toolbar,
+      .cart.totals {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: all @fast;
+        transition-delay: @faster;
+      }
+    }
+  }
+}

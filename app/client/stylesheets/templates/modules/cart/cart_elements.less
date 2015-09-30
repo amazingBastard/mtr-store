@@ -1,0 +1,111 @@
+@import '../../../variables';
+
+// cart elements styles
+
+.cart.module {
+
+  .cart.button {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: all @faster cubic-bezier(0.2, 1, 0.3, 1);
+
+    &.toggle {
+      float: right;
+      border-color: @secondary-color;
+      background-color: fade(@primary-color, @three-quarters);
+      color: @secondary-color;
+      z-index: 10;
+
+      &:hover,
+      &:focus {
+        border-color: @secondary-color;
+        background-color: @secondary-color;
+        color: @primary-color;
+      }
+    }
+
+    &.checkout.primary {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    &.remove.items.button {
+      position: absolute;
+      top: -0.25em;
+      right: -0.5em;
+      height: auto;
+      padding: 0.25em 0.35em;
+      border-color: @secondary-color;
+      background-color: @secondary-color;
+      color: @negative-color;
+      font-size: 0.75em;
+
+      &:hover,
+      &:focus {
+        border-color: @negative-color;
+        background-color: @negative-color;
+        color: @secondary-color;
+      }
+    }
+  }
+
+  .meta {
+    float: right;
+
+    &.count {
+      position: absolute;
+      top: 0;
+      left: @space-mini;
+      font-size: @three-quarters;
+      font-weight: normal;
+    }
+
+    &.qty {
+      float: left;
+      margin-right: @space-tiny;
+      color: @primary-color;
+    }
+
+    &.price {
+      margin-right: @space-base + @space-tiny;
+    }
+  }
+
+  &.active {
+
+    .cart.button {
+      transition: all @faster !important;
+
+      &.toggle {
+        border-color: @negative-color;
+        background-color: @secondary-color;
+        color: @negative-color;
+
+        &:hover,
+        &:focus {
+          border-color: @negative-color;
+          background-color: @negative-color;
+          color: @secondary-color;
+        }
+      }
+
+      &.checkout {
+        bottom: @space-base;
+        left: @space-base;
+        opacity: 1;
+      }
+    }
+
+    .meta {
+
+      &.count {
+        display: none;
+      }
+    }
+  }
+}

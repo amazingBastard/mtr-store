@@ -1,0 +1,60 @@
+@import '../../../variables';
+
+// cart items styles
+
+.cart.module {
+
+  .cart.modal {
+
+    .cart.items {
+      position: relative;
+      overflow-y: auto;
+      opacity: 0;
+      height: @fluid-half - 5vh;
+      margin: 0;
+      padding: @space-base;
+      list-style-type: none;
+      transform: translate3d(0, 0, 0);
+
+      .cart.item {
+        position: relative;
+        margin-bottom: @space-base;
+        padding: 0;
+        color: @light;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        .meta.price {
+          float: right;
+          margin-right: @space-base + @space-tiny;
+        }
+
+        .remove.item {
+          position: absolute;
+          right: 0;
+          top: @space-atomic;
+          padding: 0;
+          border: 0;
+          background-color: transparent;
+          color: @negative-color;
+          font-size: @font-size-base;
+        }
+      }
+    }
+  }
+
+  &.active {
+
+    .cart.modal {
+
+      .cart.items {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: all @fast;
+        transition-delay: @faster;
+      }
+    }
+  }
+}
