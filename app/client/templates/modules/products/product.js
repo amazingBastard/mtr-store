@@ -7,15 +7,12 @@ Template.product.events({
             cartItems = Items.find({}, {sort: {created: -1}}),
             cartItemId = '',
             cartItemQty = '',
+            qtyCount = 0,
             itemExists = false;
 
         if (qty === '') {
             qty = '1';
         }
-
-        console.log(productId);
-        console.log(cartItemId);
-        console.log(itemExists);
 
         // TODO: validate if item exists
 
@@ -23,15 +20,13 @@ Template.product.events({
             if (cartItem.product === productId) {
                 cartItemId = cartItem._id;
                 cartItemQty = cartItem.qty;
-                console.log('item in cart: ' + cartItemId);
-                console.log('item qty: ' + cartItemQty);
+                qtyCount += +cartItemQty;
                 itemExists = true;
                 return false;
             } else {
                 cartItemId = cartItem._id;
                 cartItemQty = cartItem.qty;
-                console.log('item not in cart: ' + cartItemId);
-                console.log('item qty: ' + cartItemQty);
+                qtyCount += +cartItemQty;
                 itemExists = false;
             }
         });
@@ -50,7 +45,9 @@ Template.product.events({
                     console.error('Update item method failed: ' + error.reason);
                 } else {
                     // TODO need to get qty of all items
-                    Session.set('itemsCount', qtySum);
+                    Tracker.autorun(function() {
+                        Session.set('itemsCount', qtyCount);
+                    });
                 }
             });
         } else {
@@ -59,7 +56,9 @@ Template.product.events({
                     console.error('Insert item method failed: ' + error.reason);
                 } else {
                     // TODO need to get qty of all items
-                    Session.set('itemsCount', cartItemQty);
+                    Tracker.autorun(function() {
+                        Session.set('itemsCount', qtyCount);
+                    });
                 }
             });
         }
