@@ -65,17 +65,28 @@ app/                # Application folder
       templates/         # All template styles
         layouts/            # All layouts styles
         modules/            # Modules styles
-          common/             # Common module styles (i.e. header, footer)
+          cart/               # All styles for cart module
+          common/             # Common module styles (i.e. header, footer, loading)
+          products/           # All styles for products module
         views/              # All views (routes) styles
       elements.less       # html elements and modules styles
       helpers.less        # style helpers for global use
       typography.less     # global typography styles
       variables.less      # All LESS variables
+    templates/          # All templates
+      layouts/            # Layout templates (used by router)
+      modules/            # All module templates
+        cart/               # Cart module templates
+          cart_elements       # Cart elements (i.e. buttons, inputs)
+          cart_items          # Cart items templates
+          cart_totals         # Cart totals template
+        common/             # Common modules (i.e. header, footer, loading)
+        products/           # Products modules
   collections/        # All Collections
   lib/                # Lib files that get executed first
   public/             # Public files
     images/             # Public image files
-  router/             # All routes
+  router/             # All router files
   server/             # Server folder
     fixtures/           # Meteor.Collection fixtures defined
     methods/            # Server methods
