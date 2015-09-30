@@ -10,7 +10,7 @@ Template.cartItems.helpers({
             var product = Products.findOne({_id: cartItem.product});
 
             cartItem.title = product.title;
-            cartItem.price = (Number(product.price) * cartItem.qty)
+            cartItem.price = (Number(product.price) * cartItem.qty);
 
             total += cartItem.price;
             count += +cartItem.qty;
