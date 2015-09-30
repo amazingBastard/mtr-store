@@ -1,6 +1,6 @@
 <template name="products">
     {{#if Template.subscriptionsReady}}
-        <div class="products module">
+        <div class="products module {{toggleClass}}">
             {{#each products}}
                 {{> product}}
             {{/each}}

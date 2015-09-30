@@ -63,6 +63,14 @@
       width: @half;
     }
 
+    @media (min-width: @laptop-width) {
+      width: @half - 10%;
+    }
+
+    @media (min-width: @desktop-width) {
+      width: @half - 15%;
+    }
+
     &:before {
       content: '';
       position: absolute;

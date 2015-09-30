@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  transition: all @faster;
 
   @media (min-width: @tablet-width) {
     padding: @space-base;
@@ -18,6 +19,7 @@
     flex: 0 0 @full;
     margin: @space-huge auto;
     padding: @space-base;
+    transition: all @faster;
 
     @media (min-width: @phone-width) {
       flex: 0 0 @half;
@@ -75,6 +77,26 @@
 
       .button {
         flex: 0 0 @three-quarters;
+      }
+    }
+  }
+
+  &.active {
+    width: @half;
+
+    @media (min-width: @laptop-width) {
+      width: @half + 10%;
+    }
+
+    @media (min-width: @desktop-width) {
+      width: @half + 15%;
+    }
+
+    .product {
+      flex: 0 0 @full;
+
+      @media (min-width: @laptop-width) {
+        flex: 0 0 @half;
       }
     }
   }
