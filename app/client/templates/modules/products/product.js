@@ -7,11 +7,12 @@ Template.product.events({
             cartItems = Items.find({}, {sort: {created: -1}}),
             cartItemId = '',
             cartItemQty = '',
-            qtyCount = 0,
+            qtyCount = +qty,
             itemExists = false;
 
         if (qty === '') {
             qty = '1';
+            qtyCount = +qty;
         }
 
         cartItems.forEach(function (cartItem) {
@@ -29,32 +30,30 @@ Template.product.events({
             }
         });
 
-        Tracker.autorun(function () {
-            if (itemExists) {
-                var qtyNew = template.find('.qty.input').value;
+        if (itemExists) {
+            var qtyNew = template.find('.qty.input').value;
 
-                if (qtyNew === '') {
-                    qtyNew = '1';
-                }
-
-                var qtySum = Number(cartItemQty) + Number(qtyNew);
-
-                Meteor.call('updateItem', cartItemId, qtySum.toString(), function (error) {
-                    if (error) {
-                        console.error('Update item method failed: ' + error.reason);
-                    } else {
-                        Session.set('itemsCount', qtyCount);
-                    }
-                });
-            } else {
-                Meteor.call('insertItem', qty, productId, function (error) {
-                    if (error) {
-                        console.error('Insert item method failed: ' + error.reason);
-                    } else {
-                        Session.set('itemsCount', qtyCount);
-                    }
-                });
+            if (qtyNew === '') {
+                qtyNew = '1';
             }
-        });
+
+            var qtySum = Number(cartItemQty) + Number(qtyNew);
+
+            Meteor.call('updateItem', cartItemId, qtySum.toString(), function (error) {
+                if (error) {
+                    console.error('Update item method failed: ' + error.reason);
+                } else {
+                    Session.set('itemsCount', qtyCount);
+                }
+            });
+        } else {
+            Meteor.call('insertItem', qty, productId, function (error) {
+                if (error) {
+                    console.error('Insert item method failed: ' + error.reason);
+                } else {
+                    Session.set('itemsCount', qtyCount);
+                }
+            });
+        }
     }
 });
