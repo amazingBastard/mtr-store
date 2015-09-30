@@ -7,8 +7,7 @@ Template.cartItems.helpers({
             salesTax = .08;
 
         cartItems.forEach(function (cartItem) {
-            var item = _.extend(cartItem, {}),
-                product = Products.findOne({_id: cartItem.product});
+            var product = Products.findOne({_id: cartItem.product});
 
             cartItem.title = product.title;
             cartItem.price = (Number(product.price) * cartItem.qty)
