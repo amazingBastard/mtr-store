@@ -49,6 +49,7 @@ Template.product.events({
                 if (error) {
                     console.error('Update item method failed: ' + error.reason);
                 } else {
+                    // TODO need to get qty of all items
                     Session.set('itemsCount', qtySum);
                 }
             });
@@ -57,6 +58,7 @@ Template.product.events({
                 if (error) {
                     console.error('Insert item method failed: ' + error.reason);
                 } else {
+                    // TODO need to get qty of all items
                     Session.set('itemsCount', cartItemQty);
                 }
             });
