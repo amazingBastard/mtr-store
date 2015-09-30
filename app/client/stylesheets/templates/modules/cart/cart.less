@@ -41,7 +41,7 @@
     }
 
     &.checkout.primary {
-      position: fixed;
+      position: absolute;
       bottom: 0;
       left: 0;
       opacity: 0;
@@ -58,6 +58,10 @@
     margin: 0;
     padding: 0;
     pointer-events: none;
+
+    @media (min-width: @tablet-width) {
+      width: @half;
+    }
 
     &:before {
       content: '';
