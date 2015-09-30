@@ -1,5 +1,5 @@
 Template.product.events({
-    'click .insert.item.button': function (event, template) {
+    'click #insertCartItem': function (event, template) {
         event.preventDefault();
 
         var productId = this._id,

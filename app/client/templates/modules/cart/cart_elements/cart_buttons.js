@@ -1,5 +1,5 @@
 Template.toggleCart.events({
-    'click .toggle.cart.button': function (event) {
+    'click #toggleCart': function (event) {
         event.preventDefault();
 
         Session.set('activeCart', !Session.get('activeCart'));
@@ -7,7 +7,7 @@ Template.toggleCart.events({
 });
 
 Template.removeCartItem.events({
-    'click .remove.item.button': function (event, template) {
+    'click #removeCartItem': function (event, template) {
         event.preventDefault();
 
         Meteor.call('removeItem', this._id);
@@ -15,9 +15,17 @@ Template.removeCartItem.events({
 });
 
 Template.removeCartItems.events({
-    'click .remove.items.button': function (event, template) {
+    'click #removeCartItems': function (event, template) {
         event.preventDefault();
 
         Meteor.call('removeItems');
     }
 });
+
+Template.checkoutCartItems.events({
+    'click #checkoutCartItems': function(event) {
+        event.preventDefault();
+
+        console.log('checkout');
+    }
+})

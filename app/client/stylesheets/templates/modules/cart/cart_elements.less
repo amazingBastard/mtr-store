@@ -12,7 +12,7 @@
     backface-visibility: hidden;
     transition: all @faster cubic-bezier(0.2, 1, 0.3, 1);
 
-    &.toggle {
+    &#toggleCart {
       float: right;
       border-color: @secondary-color;
       background-color: fade(@primary-color, @three-quarters);
@@ -27,14 +27,25 @@
       }
     }
 
-    &.checkout.primary {
+    &#checkoutCartItems {
       position: absolute;
       bottom: 0;
       left: 0;
       opacity: 0;
     }
 
-    &.remove.items.button {
+    &#removeCartItem {
+      position: absolute;
+      right: 0;
+      top: @space-atomic;
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      color: @negative-color;
+      font-size: @font-size-base;
+    }
+
+    &#removeCartItems {
       position: absolute;
       top: -0.25em;
       right: -0.5em;
@@ -72,6 +83,7 @@
     }
 
     &.price {
+      float: right;
       margin-right: @space-base + @space-tiny;
     }
   }
@@ -81,7 +93,7 @@
     .cart.button {
       transition: all @faster !important;
 
-      &.toggle {
+      &#toggleCart {
         border-color: @negative-color;
         background-color: @secondary-color;
         color: @negative-color;
@@ -94,7 +106,7 @@
         }
       }
 
-      &.checkout {
+      &#checkoutCartItems {
         bottom: @space-base;
         left: @space-base;
         opacity: 1;

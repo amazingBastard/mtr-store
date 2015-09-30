@@ -1,31 +1,31 @@
 <template name="toggleCart">
-    <button type="button" class="toggle cart button">
+    <button type="button" class="toggle cart button" id="toggleCart">
         <i class="{{toggleIcon}}"></i>
         <span class="count meta">{{itemsCount}}</span>
     </button>
 </template>
 
 <template name="insertCartItem">
-    <button type="button" class="insert cart item secondary button">
+    <button type="button" class="insert cart item secondary button" id="insertCartItem">
         <i class="fa fa-cart-plus"></i>
         Add to cart
     </button>
 </template>
 
 <template name="removeCartItem">
-    <button type="button" class="remove cart item button">
+    <button type="button" class="remove cart item button" id="removeCartItem">
         <i class="fa fa-minus-square-o"></i>
     </button>
 </template>
 
 <template name="removeCartItems">
-    <button type="button" class="remove cart items button">
+    <button type="button" class="remove cart items button" id="removeCartItems">
         <i class="fa fa-trash-o"></i>
     </button>
 </template>
 
 <template name="checkoutCartItems">
-    <button type="button" class="checkout cart primary button">
+    <button type="button" class="checkout cart primary button" id="checkoutCartItems">
         <i class="fa fa-cart-arrow-down"></i>
         Checkout
     </button>
