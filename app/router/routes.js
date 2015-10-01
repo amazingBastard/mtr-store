@@ -4,7 +4,7 @@ FlowRouter.route('/', {
         BlazeLayout.render('layout', {
             content: 'root'
         });
-        //GAnalytics.pageview();
+        GAnalytics.pageview();
     }
 });
 
@@ -14,7 +14,7 @@ FlowRouter.route('/checkout', {
         BlazeLayout.render('layout', {
             content: 'checkout'
         });
-        //GAnalytics.pageview();
+        GAnalytics.pageview();
     }
 });
 
@@ -23,6 +23,6 @@ FlowRouter.notFound = {
         BlazeLayout.render('layout', {
             content: 'redirect'
         });
-        //GAnalytics.pageview();
+        GAnalytics.pageview();
     }
 };
