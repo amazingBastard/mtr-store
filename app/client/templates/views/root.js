@@ -1,4 +1,4 @@
-Template.checkout.onCreated(function() {
+Template.root.onCreated(function() {
     var self = this;
     self.autorun(function() {
         self.subscribe('products');
