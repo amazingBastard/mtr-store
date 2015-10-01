@@ -26,6 +26,6 @@ Template.checkoutCartItems.events({
     'click #checkoutCartItems': function(event) {
         event.preventDefault();
 
-        console.log('checkout');
+        FlowRouter.go('checkout');
     }
 })

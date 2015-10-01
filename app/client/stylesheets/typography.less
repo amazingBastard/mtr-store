@@ -32,17 +32,18 @@ html {
     }
 
     a {
+      color: @link-color;
       font-size: inherit;
       text-decoration: none;
 
       &:hover,
       &:focus {
-        color: @secondary-color;
+        color: darken(@link-color, @sixteenth);
         text-decoration: underline;
       }
 
       &:visited {
-        color: darken(@secondary-color, @quarter);
+        color: @highlight-color;
       }
 
       &:active {
