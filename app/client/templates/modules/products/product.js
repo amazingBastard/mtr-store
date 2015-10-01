@@ -42,18 +42,16 @@ Template.product.events({
             Meteor.call('updateItem', cartItemId, qtySum.toString(), function (error) {
                 if (error) {
                     console.error('Update item method failed: ' + error.reason);
-                } else {
-                    Session.set('itemsCount', qtyCount);
                 }
             });
         } else {
             Meteor.call('insertItem', qty, productId, function (error) {
                 if (error) {
                     console.error('Insert item method failed: ' + error.reason);
-                } else {
-                    Session.set('itemsCount', qtyCount);
                 }
             });
         }
+
+        Session.set('itemsCount', qtyCount);
     }
 });
