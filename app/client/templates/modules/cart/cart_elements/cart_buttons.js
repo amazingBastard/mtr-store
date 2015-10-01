@@ -7,7 +7,7 @@ Template.toggleCart.events({
 });
 
 Template.removeCartItem.events({
-    'click #removeCartItem': function (event, template) {
+    'click #removeCartItem': function (event) {
         event.preventDefault();
 
         Meteor.call('removeItem', this._id);
@@ -15,7 +15,7 @@ Template.removeCartItem.events({
 });
 
 Template.removeCartItems.events({
-    'click #removeCartItems': function (event, template) {
+    'click #removeCartItems': function (event) {
         event.preventDefault();
 
         Meteor.call('removeItems');
