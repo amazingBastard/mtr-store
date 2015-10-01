@@ -14,13 +14,14 @@
       margin: 0;
       padding: @space-base;
       list-style-type: none;
-      transform: translate3d(0, 0, 0);
+      transform: translate3d(0, -@fluid-quarter, 0);
 
       .cart.item {
         position: relative;
         margin-bottom: @space-base;
         padding: 0;
         color: @light;
+        transition: all @faster;
 
         &:last-child {
           margin: 0;
@@ -36,7 +37,7 @@
       .cart.items {
         opacity: 1;
         transform: translate3d(0, 0, 0);
-        transition: all @fast;
+        transition: all @faster;
         transition-delay: @faster;
       }
     }
