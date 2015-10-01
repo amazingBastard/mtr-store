@@ -1,3 +1,5 @@
+'use strict';
+
 Template.cart.onCreated(function () {
     var self = this;
     self.autorun(function () {

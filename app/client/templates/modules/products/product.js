@@ -1,3 +1,5 @@
+'use strict';
+
 Template.product.events({
     'click #insertCartItem': function (event, template) {
         event.preventDefault();

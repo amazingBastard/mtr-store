@@ -1,3 +1,5 @@
+'use strict';
+
 Template.cartItems.helpers({
     items: function () {
         var cart = [],
