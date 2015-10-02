@@ -9,7 +9,6 @@ dburles:collection-helpers
 fastclick
 natestrauser:animate-css
 flemay:less-autoprefixer
-momentjs:moment
 standard-minifiers
 meteor-base
 mobile-experience

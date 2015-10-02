@@ -135,8 +135,6 @@ environments/       # Environments folder
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
 * Development
   * [flemay:less-autoprefixer](https://github.com/flemay/less-autoprefixer)
-  * [momentjs:moment](https://github.com/moment/moment/)
-  * [msavin:mongol](https://github.com/msavin/Mongol)
 
 ## License
 
