@@ -93,6 +93,8 @@ app/                # Application folder
     publications/       # Collection publications
     startup/            # On server startup
   tests/              # All tests
+    client/             # Client tests
+    server/             # Server tests
 environments/       # Environments folder
   local/              # local environment
   production/         # production environment
