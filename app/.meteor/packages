@@ -29,3 +29,5 @@ meteorhacks:fast-render
 spiderable
 tomwasd:flow-router-seo
 datariot:ganalytics
+velocity:html-reporter
+sanjo:jasmine

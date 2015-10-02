@@ -135,6 +135,8 @@ environments/       # Environments folder
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
 * Development
   * [flemay:less-autoprefixer](https://github.com/flemay/less-autoprefixer)
+  * [sanjo:jasmine](https://github.com/xolvio/meteor-jasmine)
+  * [velocity:html-reporter](https://github.com/meteor-velocity/html-reporter/)
 
 ## License
 
