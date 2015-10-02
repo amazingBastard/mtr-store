@@ -27,7 +27,6 @@ check
 kadira:flow-router
 kadira:blaze-layout
 meteorhacks:fast-render
-msavin:mongol
 spiderable
 tomwasd:flow-router-seo
 datariot:ganalytics
