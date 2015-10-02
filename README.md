@@ -18,6 +18,9 @@ Mobile-first Store with Cart and Checkout built with Meteor
 
 * Setup build environments (for testing)
 * Security (permissions, accounts)
+* Integrate Stripe
+* Product view
+* Refactor Cart Module into Meteor package
 
 ## How to use
 
@@ -88,7 +91,7 @@ app/                # Application folder
     images/             # Public image files
   router/             # All router files
   server/             # Server folder
-    fixtures/           # Meteor.Collection fixtures defined
+    fixtures/           # Collection fixtures
     methods/            # Server methods
     publications/       # Collection publications
     startup/            # On server startup
