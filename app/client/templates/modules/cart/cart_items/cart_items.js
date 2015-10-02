@@ -20,12 +20,12 @@ Template.cartItems.helpers({
             cart.push(cartItem);
         });
 
-        Tracker.autorun(function() {
-            cart.count = count;
-            cart.subTotal = total;
-            cart.tax = cart.subTotal * salesTax;
-            cart.total = cart.subTotal + cart.tax;
+        cart.count = count;
+        cart.subTotal = total;
+        cart.tax = cart.subTotal * salesTax;
+        cart.total = cart.subTotal + cart.tax;
 
+        Tracker.autorun(function() {
             Session.set('itemsCount', cart.count);
             Session.set('itemsSubTotal', cart.subTotal);
             Session.set('itemsTax', cart.tax);
